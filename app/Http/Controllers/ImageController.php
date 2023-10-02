@@ -44,7 +44,7 @@ class ImageController extends Controller
             });
 
             // Налаштовуємо прозорість водяного знаку
-            $watermark->opacity(45); // Змініть значення (0-100) для регулювання прозорості
+            $watermark->opacity(35); // Змініть значення (0-100) для регулювання прозорості
 
             // Додаємо водяний знак
             $img->insert($watermark, 'top-left', 10, 10);
