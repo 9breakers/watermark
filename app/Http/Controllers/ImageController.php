@@ -39,9 +39,12 @@ class ImageController extends Controller
             $watermarkHeight = $watermark->height();
 
             // Встановлюємо розмір водяного знаку пропорційно до розміру зображення
-            $watermark->resize($imgWidth / 4, null, function ($constraint) {
+            $watermark->resize($imgWidth / 3, null, function ($constraint) {
                 $constraint->aspectRatio();
             });
+
+            // Налаштовуємо прозорість водяного знаку
+            $watermark->opacity(45); // Змініть значення (0-100) для регулювання прозорості
 
             // Додаємо водяний знак
             $img->insert($watermark, 'top-left', 10, 10);
@@ -52,6 +55,7 @@ class ImageController extends Controller
 
         return redirect()->back()->with('success', 'Зображення були успішно оброблені та збережені.');
     }
+
 
 
 
