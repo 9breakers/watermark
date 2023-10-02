@@ -44,7 +44,7 @@ class ImageController extends Controller
             });
 
             // Додаємо водяний знак
-            $img->insert($watermark, 'bottom-left', 10, 10);
+            $img->insert($watermark, 'top-left', 10, 10);
 
             // Зберігаємо зображення з водяним знаком
             $img->save(public_path('uploads/' . $imageName));
